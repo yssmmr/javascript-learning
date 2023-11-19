@@ -9,3 +9,4 @@ let name = 'Bob';
 
 name && hello(name);
 //nameがtruthyならばhello()に処理がうつる。
+
