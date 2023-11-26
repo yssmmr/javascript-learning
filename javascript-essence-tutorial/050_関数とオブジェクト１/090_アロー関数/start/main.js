@@ -10,3 +10,4 @@ const b = (name, name1) => 'hello ' + name + ' ' + name1;
 //一行の場合はreturn省略可。
 
 console.log(b('Tom', 'Bob'));
+

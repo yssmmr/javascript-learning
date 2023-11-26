@@ -1,9 +1,20 @@
+//アロー関数ではthisの値がセットされない。
+
 window.name = 'John';
+const a = () => console.log('Bye ' + this.name);
 
 const person = {
     name: 'Tom',
-    hello: function() {
-        console.log('Hello ' + this.name);
+    hello() {
+        console.log('Hello ' + this.name); //アロー関数だとグローバルスコープを探しに行く
+        a();
     }
 }
-person.hello();
+//person.hello();
+
+function b() {
+    const a = () => console.log('Bye ' + this.name)
+    a();
+} 
+
+b();
