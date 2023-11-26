@@ -12,7 +12,13 @@ const person = {
     }
 }
 
-// setTimeout(/** ここに追記 */, 1000);
+setTimeout(function () {
+    console.log(person.hello());
+}, 1000);
+
+//person.hello()と記述すると、returnでhello Tomと値を返しているだけなので、console.logが必要
+
+
 
 /**
  * 問題２：
@@ -24,6 +30,11 @@ const person = {
  * ※alertは第一引数に渡した文字列を画面のダイアログに表
  * 示する関数です。
  */
+
+//setTimeout(function() {
+//    const hello = person.hello();
+//    alert(hello);
+//} , 1000);
 
 
 /**
@@ -46,12 +57,14 @@ function after1s(callack) {
 }
 
 // この時点で実行します。
-// after1s(obj.greeting);
+after1s(obj.greeting);
 
 // この後でgreetingを書き換えます。
 obj.greeting = function() {
     console.log('hey');
 }
+//書き換えしたとしても、60行目の参照先は51行目のgreeting関数
+
 
 
 /**
@@ -63,32 +76,34 @@ obj.greeting = function() {
  * 
  * ※コールバック関数を用いて実装してください。
  */
-function calcFactory(val) {
+
+//引数callbackにalertかconsole.logを渡すと挙動が変わる。
+function calcFactory(val, callback) {
     return {
         plus: function(target) {
             const newVal = val + target;
-            console.log(`${val} + ${target} = ${newVal}`);
+            callback(`${val} + ${target} = ${newVal}`);
             val = newVal;
         },
         minus: function(target) {
             const newVal = val - target;
-            console.log(`${val} - ${target} = ${newVal}`);
+            callback(`${val} - ${target} = ${newVal}`);
             val = newVal;
         },
         multiply: function(target) {
             const newVal = val * target;
-            console.log(`${val} x ${target} = ${newVal}`);
+            callback(`${val} x ${target} = ${newVal}`);
             val = newVal;
         },
         divide: function(target) {
             const newVal = val / target;
-            console.log(`${val} / ${target} = ${newVal}`);
+            callback(`${val} / ${target} = ${newVal}`);
             val = newVal;
         }
     };
 }
 
-const calc = calcFactory(10);
+const calc = calcFactory(10, console.log);
 calc.plus(5); 
 calc.minus(3); 
 calc.multiply(3);
