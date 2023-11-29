@@ -1,7 +1,7 @@
 const person = {
     name: 'Tom',
-    bye: () => {
-        console.log('Bye ' + this.name);
+    bye() {
+        console.log('Bye ' + this.name); //アロー関数はthisを持たないので記述変更する必要あり→無名関数へ
     },
     hello: function (greeting) {
         console.log(greeting + ' ' + this.name);
@@ -23,9 +23,21 @@ const person = {
      * ３．thisを一旦変数に代入
      */
 
+    hello1s() {
+        //setTimeout(this.hello.bind(this, "hello"), 1000)
 
-    
+        //setTimeout(() => {
+        //    this.hello('hello');
+        //}, 1000);
+
+        const _this = this;
+        setTimeout(function() {
+            _this.hello('hello');
+        }) 
+    }
 }
+
+person.hello1s();
 
 /**
  * 問題１：
@@ -41,7 +53,9 @@ setTimeout(person.hello.bind(person, "Hello"), 1000);
  * と出力されるように、
  * 以下のコードを変更してください。
  */
-alert(person.hello);
+alert(person.hello("Hello"));
+//alertの引数は文字列
+
 
 /**
  * 問題３：
