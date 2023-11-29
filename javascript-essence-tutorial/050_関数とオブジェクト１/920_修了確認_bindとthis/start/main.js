@@ -33,7 +33,7 @@ const person = {
  * と出力されるように、以下のコード
  * の記載を変更しましょう。
  */
-setTimeout(person.hello, 1000);
+setTimeout(person.hello.bind(person, "Hello"), 1000);
 
 /**
  * 問題２：
