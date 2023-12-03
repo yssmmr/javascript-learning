@@ -42,3 +42,25 @@ body {
   font-weight: bold;
   color: rgb(152, 54, 57);
 }
+
+.type-display {
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.type-Input {
+  background: transparent; /*  背景を透明にできる　*/
+  border: 2px solid rgb(152, 54, 57);
+  outline: none;
+  width: 100%;
+  height: 14rem;
+  margin: auto;
+  resize: none; /* テキストエリアを自由に変えられなくする */
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.type-Input:focus {
+  border-color: black; /* テキストエリアにフォーカスした時に色を変える */
+}

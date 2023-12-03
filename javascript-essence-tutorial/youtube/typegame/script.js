@@ -1,0 +1,18 @@
+const RANDOM_SENTENCE_URL_API = "https://api.quotable.io/random";
+
+//　非同期でランダムな文章を取得する。
+function GetRandomSentence() {
+  return fetch(RANDOM_SENTENCE_URL_API)
+  .then((response) => response.json()) //.then→fetchし終えたらjsonに変換
+  .then((data) => data.content); 
+}
+
+// ランダムな文章を取得して表示する
+
+async function RenderNextSentence() {
+  const sentence = await GetRandomSentence();
+  console.log(sentence);
+}
+
+RenderNextSentence();
+
