@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Zen+Antique&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+  height: 100vh; /*　画面の縦幅いっぱいに　*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* スクロールできなくする */
+  background: linear-gradient(  /* グラデーションを作る */
+    to left top,
+    #ea6c6c,
+    #e4bcbc
+  );
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  background-color: rgb(93,183,235);
+  font-size: 2.4rem;
+  font-weight: 600;
+  padding: 4rem;
+  border-radius: 0.5rem;
+  width: 1000px;
+  min-height: 600px;
+  max-width: 90%;
+  box-shadow: 1px 5px 6px rgb(80, 80, 80)
+}
+
+.container .type-Input {
+  margin-top: 4rem;
+  font-size: 3rem;
+}
+
+.timer {
+  position: absolute;
+  top: 2rem;
+  font-size: 5rem;
+  font-weight: bold;
+  color: rgb(152, 54, 57);
+}
