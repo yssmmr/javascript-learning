@@ -64,3 +64,12 @@ body {
 .type-Input:focus {
   border-color: black; /* テキストエリアにフォーカスした時に色を変える */
 }
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+  text-decoration: underline;
+}
