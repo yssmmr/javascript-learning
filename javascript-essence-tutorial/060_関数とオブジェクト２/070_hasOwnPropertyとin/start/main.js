@@ -12,4 +12,4 @@ const result = bob.hasOwnProperty('hello')
 console.log(result);
 
 console.log("name" in bob);
-// __proto__にbobという文字列、もしくはメソッドが格納されているか調べる
+// bobの__proto__にnameという文字列、もしくはメソッドが格納されているか調べる
