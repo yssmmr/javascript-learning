@@ -8,3 +8,8 @@ Object.prototype.hello = function() {
 }
 
 const bob = new Person('Bob', 18);
+const result = bob.hasOwnProperty('hello')
+console.log(result);
+
+console.log("name" in bob);
+// __proto__にbobという文字列、もしくはメソッドが格納されているか調べる
